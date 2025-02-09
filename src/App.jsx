@@ -7,9 +7,11 @@ function App() {
     <div>
       <Header />
       <div className="containter">
-        <Recipes />
+        <ActorsPage />
       </div>
       <Footer />
     </div>
   )
 }
+
+export default App;
