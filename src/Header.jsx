@@ -13,10 +13,10 @@ export function Header() {
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">New Listing</a>
+                <a className="nav-link" href="#actors-new">New Actor Listing</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#"></a>
+                <a className="nav-link" href="#actors-index">All Actors</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link disabled" aria-disabled="true">Disabled</a>

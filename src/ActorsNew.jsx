@@ -1,7 +1,6 @@
 export function ActorsNew({ onCreate }) {
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("in handle submit");
+    console.log("handling submit");
     const params = new FormData(event.target)
     onCreate(params)
     event.target.reset();
