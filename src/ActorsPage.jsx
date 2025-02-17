@@ -1,5 +1,4 @@
 import { ActorsIndex } from './ActorsIndex';
-import { ActorsNew } from './ActorsNew';
 import { ActorsShow } from './ActorsShow';
 import { Modal } from './Modal';
 import axios from 'axios';
@@ -12,7 +11,7 @@ export function ActorsPage() {
 
   const handleIndex = () => {
     console.log("Handling index");
-    axios.get('http://localhost:3000/actors.json').then(function (response) {
+    axios.get("http://localhost:3000/actors.json").then(response => {
       console.log("inside the .then")
       console.log(response.data);
       setActors(response.data);
@@ -30,14 +29,6 @@ export function ActorsPage() {
   const closeModal = () => {
     console.log("Closing Modal");
     setIsActorsShowVisible(false)
-  }
-
-  const handleCreate = (params) => {
-    console.log('handling create');
-    axios.post("http://localhost:3000/actors.json", params).then(response => {
-      console.log(response.data)
-      setActors([...actors, response.data])
-    })
   }
 
   const handleUpdate = (params, actor) => {
@@ -68,7 +59,6 @@ export function ActorsPage() {
 
   return (
     <main>
-      <ActorsNew onCreate={handleCreate} />
       <ActorsIndex actors={actors} onShow={handleShow} />
       <Modal show={isActorsShowVisible} onClose={closeModal}>
         <ActorsShow actor={currentActor} onUpdate={handleUpdate} onDestroy={handleDestroy} />
