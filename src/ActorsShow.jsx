@@ -20,10 +20,10 @@ export function ActorsShow({ actor, onUpdate, onDestroy }) {
       <p>Movie Id: {actor.movie_id}</p>
 
     <form onSubmit={handleSubmit}>
-      <p>First Name: <input type="text" name="first_name" defaultValue={actor.first_name} /></p>
-      <p>Last Name: <input type="text" name="last_name" defaultValue={actor.last_name} /></p>
-      <p>Known For: <input type="text" name="known_for" defaultValue={actor.known_for} /></p>
-      <p>Movie ID: <input type="text" name="id" defaultValue={actor.id} /></p>
+      <p>First Name: <input type="text" name="first_name"  /></p>
+      <p>Last Name: <input type="text" name="last_name"  /></p>
+      <p>Known For: <input type="text" name="known_for"  /></p>
+      <p>Movie ID: <input type="text" name="id" /></p>
       <button>Update Actors</button>
     </form>
       <br />
