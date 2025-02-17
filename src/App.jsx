@@ -6,6 +6,7 @@ import { LoginPage } from "./LoginPage";
 import { ActorsPage } from "./ActorsPage";
 import { ActorsNew } from "./ActorsNew";
 import { Footer } from "./Footer";
+import { LogoutLink } from "./LogoutLink";
 
 axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.withCredentials = true;
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <LoginPage />,
       },
+      {
+        path: "/logout",
+        element: <LogoutLink />,
+      }
     ],
   },
 ]);

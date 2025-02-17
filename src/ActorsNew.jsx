@@ -3,7 +3,7 @@ import axios from "axios";
 export function ActorsNew() {
   const handleSubmit = (event) => {
     console.log("handling submit");
-    const params = new FormData(event.target)
+    const params = new FormData(event.target);
     axios.post("http://localhost:3000/actors.json", params).then(response => {
       console.log(response.data);
       window.location.href = "/"

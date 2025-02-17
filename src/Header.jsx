@@ -1,3 +1,5 @@
+import { LogoutLink } from "./LogoutLink"
+
 export function Header() {
   return (
     <header>
@@ -19,7 +21,7 @@ export function Header() {
                 <ul className="dropdown-menu">
                   <li><a className="dropdown-item" href="/signup">Sign Up</a></li>
                   <li><a className="dropdown-item" href="/Login">Login</a></li>
-                  <li><a className="dropdown-item" href="#">Logout</a></li>
+                  <li><LogoutLink className="dropdown-item" href="/Logout" /></li>
                 </ul>
               </li>
             </ul>
