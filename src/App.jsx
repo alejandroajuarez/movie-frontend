@@ -7,7 +7,8 @@ import { ActorsPage } from "./ActorsPage";
 import { ActorsNew } from "./ActorsNew";
 import { Footer } from "./Footer";
 import { LogoutLink } from "./LogoutLink";
-import { ActorsIndexPage } from "./ActorsIndexPage";
+import { ActorsIndexPage } from "./ActorsIndexPage"
+import { ActorsShowPage } from "./ActorsShowPage";
 
 axios.defaults.baseURL = "http://localhost:3000";
 axios.defaults.withCredentials = true;
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
         path: "/actors",
         element: <ActorsIndexPage />,
         loader: () => axios.get("/actors.json").then((response) => response.data),
+      },
+      {
+        path: "/actors/:id",
+        element: <ActorsShowPage />,
+        loader: ({ params }) => axios.get(`/actors/${params.id}.json`).then((response) => response.data),
       },
       {
         path: "/signup",
