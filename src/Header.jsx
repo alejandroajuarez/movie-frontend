@@ -11,18 +11,20 @@ export function Header() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
+            <li className="nav-item">
+                <a className="nav-link" href="/actors">All Actors</a>
+              </li>
               <li className="nav-item">
                 <a className="nav-link" href="/actors/new">New Actor Listing</a>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="/signup">Sign Up</a></li>
-                  <li><a className="dropdown-item" href="/Login">Login</a></li>
-                  <li><LogoutLink className="dropdown-item" href="/Logout" /></li>
-                </ul>
+              <li className="nav-item">
+                <a className="nav-link" href="/signup">Sign Up</a>
+              </li>
+              <li className="nav-item">
+                <LogoutLink className="nav-link" />
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/login">Login</a>
               </li>
             </ul>
           </div>
