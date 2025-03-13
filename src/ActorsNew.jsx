@@ -12,27 +12,67 @@ export function ActorsNew() {
   }
 
   return (
-    <div id="actors-new">
-      <h1>New Actor Entry</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="actorFirstName" className="form-label">Actor First Name</label>
-          <input type="text" className="form-control" id="actorFirstName" name="first_name" />
+    <div id="actors-new" className="max-w-lg mx-auto p-6 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-lg">
+      <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent text-center">
+        New Actor Entry
+      </h1>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        
+        <div>
+          <label htmlFor="actorFirstName" className="block text-sm font-medium text-gray-300">
+            Actor First Name
+          </label>
+          <input
+            type="text"
+            id="actorFirstName"
+            name="first_name"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
-        <div className="mb-3">
-          <label htmlFor="actorLastName" className="form-label">Actor Last name</label>
-          <input type="text"  className="form-control" id="actorLastName" name="last_name" />
+  
+        <div>
+          <label htmlFor="actorLastName" className="block text-sm font-medium text-gray-300">
+            Actor Last Name
+          </label>
+          <input
+            type="text"
+            id="actorLastName"
+            name="last_name"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
-        <div className="mb-3">
-          <label htmlFor="actorKnownFor" className="form-label">Actor Known For</label>
-          <input type="text"  className="form-control" id="actorKnownFor" name="known_for" />
+  
+        <div>
+          <label htmlFor="actorKnownFor" className="block text-sm font-medium text-gray-300">
+            Actor Known For
+          </label>
+          <input
+            type="text"
+            id="actorKnownFor"
+            name="known_for"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
-        <div className="mb-3">
-          <label htmlFor="actorMovieId" className="form-label">Movie ID</label>
-          <input type="text" className="form-control" id="actorMovieId" name="movie_id" />
+  
+        <div>
+          <label htmlFor="actorMovieId" className="block text-sm font-medium text-gray-300">
+            Movie ID
+          </label>
+          <input
+            type="text"
+            id="actorMovieId"
+            name="movie_id"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+  
+        <button
+          type="submit"
+          className="w-full bg-gray-700 text-white font-semibold py-2 rounded-md hover:bg-gray-600 transition"
+        >
+          Submit
+        </button>
       </form>
     </div>
-  );
+  );  
 }

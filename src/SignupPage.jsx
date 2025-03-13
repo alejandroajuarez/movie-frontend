@@ -22,28 +22,64 @@ export function SignupPage() {
   };
 
   return (
-    <div id="signup">
-      <h1>Signup</h1>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <form onSubmit={handleSubmit}>
+    <div id="signup" className="max-w-lg mx-auto p-6 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-lg">
+      <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent text-center">
+        Signup
+      </h1>
+  
+      {errors.length > 0 && (
+        <ul className="mb-4 text-red-400 list-disc list-inside">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+      )}
+  
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          Name: <input name="name" type="text" />
+          <label className="block text-sm font-medium text-gray-300">Name</label>
+          <input
+            name="name"
+            type="text"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
+  
         <div>
-          Email: <input name="email" type="email" />
+          <label className="block text-sm font-medium text-gray-300">Email</label>
+          <input
+            name="email"
+            type="email"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
+  
         <div>
-          Password: <input name="password" type="password" />
+          <label className="block text-sm font-medium text-gray-300">Password</label>
+          <input
+            name="password"
+            type="password"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
+  
         <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
+          <label className="block text-sm font-medium text-gray-300">Password Confirmation</label>
+          <input
+            name="password_confirmation"
+            type="password"
+            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
+          />
         </div>
-        <button type="submit">Signup</button>
+  
+        <button
+          type="submit"
+          className="w-full bg-gray-700 text-white font-semibold py-2 rounded-md hover:bg-gray-600 transition"
+        >
+          Signup
+        </button>
       </form>
     </div>
   );
+  
 }

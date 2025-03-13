@@ -16,9 +16,11 @@ axios.defaults.withCredentials = true;
 const router = createBrowserRouter([
   {
     element: (
-      <div>
+      <div className="flex bg-gradient-to-br from-gray-900 via-black to-gray-800 min-h-screen flex-col">
         <Header />
-        <Outlet />
+        <div className="container mx-auto p-4 flex-auto">
+          <Outlet />
+        </div>
         <Footer />
       </div>
     ),
