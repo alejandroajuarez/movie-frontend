@@ -13,7 +13,7 @@ export function ActorsNew() {
 
   return (
     <div id="actors-new" className="max-w-lg mx-auto p-6 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-lg">
-      <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent text-center">
+      <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-center">
         New Actor Entry
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
