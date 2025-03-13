@@ -6,7 +6,7 @@ export function ActorsIndex({ actors, onShow }) {
       
       {/* Glassmorphism Container */}
       <div className="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-lg shadow-lg w-full max-w-6xl">
-        <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent text-center">
+        <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-center">
           All Actors
         </h1>
   

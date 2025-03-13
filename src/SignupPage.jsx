@@ -23,7 +23,7 @@ export function SignupPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
+    <div className="flex items-center justify-center min-h-screen ">
       <div className="max-w-lg w-full px-6 py-8 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-xl">
         
         <h1 className="text-4xl font-bold text-white text-center mb-6">Sign Up</h1>
