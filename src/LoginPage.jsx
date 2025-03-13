@@ -13,6 +13,7 @@ export function LoginPage() {
     event.preventDefault();
     setErrors([]);
     const params = new FormData(event.target);
+
     axios
       .post("http://localhost:3000/sessions.json", params)
       .then((response) => {
@@ -20,7 +21,7 @@ export function LoginPage() {
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
-        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/";
       })
       .catch((error) => {
         console.log(error.response);
@@ -29,46 +30,76 @@ export function LoginPage() {
   };
 
   return (
-    <div id="login" className="max-w-lg mx-auto p-6 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-lg">
-      <h1 className="text-2xl font-bold mb-4 text-white bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent text-center">
-        Login
-      </h1>
-  
-      {errors.length > 0 && (
-        <ul className="mb-4 text-red-400 list-disc list-inside">
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-      )}
-  
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-300">Email</label>
-          <input
-            name="email"
-            type="email"
-            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
-          />
+    <div className="flex items-center justify-center min-h-screen ">
+      <div className="max-w-lg w-full px-6 py-8 bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-xl">
+        
+        <h1 className="text-4xl font-bold text-white text-center mb-6">Log in</h1>
+
+        {errors.length > 0 && (
+          <ul className="mb-4 text-red-400 list-disc list-inside text-center">
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-gray-300 text-sm font-medium mb-1">Email</label>
+            <input
+              name="email"
+              type="email"
+              className="border p-3 bg-gray-800 text-gray-300 border-gray-600 shadow-md rounded-lg w-full focus:ring-gray-400 focus:border-gray-500 transition-all"
+              placeholder="Email"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-300 text-sm font-medium mb-1">Password</label>
+            <input
+              name="password"
+              type="password"
+              className="border p-3 bg-gray-800 text-gray-300 border-gray-600 shadow-md rounded-lg w-full focus:ring-gray-400 focus:border-gray-500 transition-all"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <a href="#" className="text-blue-400 text-sm hover:underline block text-center">Forgot your password?</a>
+
+          <button
+            type="submit"
+            className="w-full py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-gray-800 to-gray-700 shadow-lg transition-all duration-300 hover:scale-105"
+          >
+            LOG IN
+          </button>
+        </form>
+
+        <div className="text-center text-sm mt-4 text-gray-300">
+          Don&apos;t have an account?
+          <a href="/signup" className="text-blue-400 hover:underline"> Sign Up</a>
         </div>
-  
-        <div>
-          <label className="block text-sm font-medium text-gray-300">Password</label>
-          <input
-            name="password"
-            type="password"
-            className="mt-1 w-full bg-gray-800 text-gray-200 border border-gray-600 rounded-md p-2 focus:ring-gray-400 focus:border-gray-500"
-          />
+
+        {/* Third-Party Authentication */}
+        <div className="flex items-center justify-center mt-6 space-x-3">
+          <button className="hover:scale-105 transition transform p-2 rounded-lg bg-gray-800 shadow-md">
+            <img className="w-6 h-6" src="https://ucarecdn.com/8f25a2ba-bdcf-4ff1-b596-088f330416ef/" alt="Google" />
+          </button>
+          <button className="hover:scale-105 transition transform p-2 rounded-lg bg-gray-800 shadow-md">
+            <img className="w-6 h-6" src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/" alt="LinkedIn" />
+          </button>
+          <button className="hover:scale-105 transition transform p-2 rounded-lg bg-gray-800 shadow-md">
+            <img className="w-6 h-6 filter invert" src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/" alt="GitHub" />
+          </button>
         </div>
-  
-        <button
-          type="submit"
-          className="w-full bg-gray-700 text-white font-semibold py-2 rounded-md hover:bg-gray-600 transition"
-        >
-          Login
-        </button>
-      </form>
+
+        <div className="text-center text-xs text-gray-400 mt-4">
+          By signing in, you agree to our 
+          <a href="#" className="text-blue-400 hover:underline"> Terms</a> and 
+          <a href="#" className="text-blue-400 hover:underline"> Privacy Policy</a>.
+        </div>
+      </div>
     </div>
   );
-  
 }

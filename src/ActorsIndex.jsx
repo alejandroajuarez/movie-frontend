@@ -16,13 +16,20 @@ export function ActorsIndex({ actors, onShow }) {
               <h3 className="text-lg font-semibold text-white">{actor.first_name} {actor.last_name}</h3>
               <p className="text-gray-400">{actor.known_for}</p>
               <p className="text-gray-500">Movie ID: {actor.movie_id}</p>
-              <button 
-                type="button" 
-                className="mt-3 px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition"
+              <div className="relative inline-flex group">
+              <div
+                className="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200"
+              ></div>
+              <button
+                type="button"
+                className="relative inline-flex items-center justify-center px-5 py-2 text-base font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-700 rounded mt-2"
                 onClick={() => onShow(actor)}
               >
                 More Info
               </button>
+            </div>
+
+
             </div>
           ))}
         </div>
